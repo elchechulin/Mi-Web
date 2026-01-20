@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Restaurant Marketing Systems</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.png" type="image/png">
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  color:#111;
+  background:#fff;
+  line-height:1.6;
+}
+
+/* Botones */
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:16px 34px;
+  background:#e10600;
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:6px;
+  transition: background .3s ease;
+}
+.btn:hover{ background:#ff4500; }
+
+/* Detalles fuego */
+h2::after{
+  content:"";
+  display:block;
+  width:60px;
+  height:4px;
+  background:#ff4500;
+  margin-top:10px;
+}
+
+/* Header */
+header{
+  position:relative;
+  background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+  url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2000&q=90");
+  background-size:cover;
+  background-position:center;
+  color:#fff;
+  padding:140px 20px;
+}
+
+.logo{
+  position:absolute;
+  top:30px;
+  left:30px;
+}
+.logo img{ height:55px; }
+
+.container{
+  max-width:1100px;
+  margin:auto;
+}
+
+h1{ font-size:3rem; margin-bottom:20px; }
+h2{ font-size:2rem; margin-bottom:15px; }
+h3{ margin-top:0; }
+
+/* Secciones */
+section{ padding:90px 20px; }
+.gray{ background:#f5f5f5; }
+
+/* Grid */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.box{
+  background:#fff;
+  padding:35px;
+  border-radius:10px;
+  box-shadow:0 8px 25px rgba(0,0,0,.05);
+  position:relative;
+}
+
+/* Packs */
+.price{
+  font-size:1.6rem;
+  font-weight:bold;
+  margin:15px 0;
+  color:#e10600;
+}
+.badge{
+  display:inline-block;
+  padding:6px 12px;
+  font-size:.75rem;
+  font-weight:bold;
+  border-radius:20px;
+  background:#ff4500;
+  color:#fff;
+  margin-bottom:10px;
+}
+
+/* Sección crecimiento */
+.growth{
+  background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+  url("https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=2000&q=90");
+  background-size:cover;
+  background-position:center;
+  color:#fff;
+  text-align:center;
+}
+
+/* Footer */
+footer{
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:40px 20px;
+  font-size:.9rem;
+}
+
+@media(max-width:768px){
+  h1{font-size:2.2rem;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="Restaurant Marketing Systems">
+  </div>
+
+  <div class="container">
+    <h1>Sistemas de captación que llenan restaurantes</h1>
+    <p>
+      Creamos sistemas digitales que convierten visitas online en reservas reales,
+      sin que el dueño del negocio tenga que aprender marketing ni tecnología.
+    </p>
+    <a href="#agenda" class="btn">Agendar llamada estratégica</a>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <h2>El problema real</h2>
+    <p>
+      La mayoría de restaurantes tienen buena comida, buen servicio y buena ubicación,
+      pero siguen teniendo mesas vacías porque su presencia online no convierte.
+    </p>
+    <p>
+      Una web mal planteada no informa: <strong>hace que el cliente se vaya</strong>.
+    </p>
+  </div>
+</section>
+
+<section class="gray">
+  <div class="container">
+    <h2>Qué hacemos diferente</h2>
+    <div class="grid">
+      <div class="box">
+        <h3>Enfoque a reservas</h3>
+        <p>No diseñamos webs bonitas, diseñamos decisiones: llamar, reservar o escribir.</p>
+      </div>
+      <div class="box">
+        <h3>Sistema 24/7</h3>
+        <p>Tu negocio capta clientes incluso cuando estás cerrado.</p>
+      </div>
+      <div class="box">
+        <h3>Especialistas en hostelería</h3>
+        <p>No trabajamos con todo el mundo. Solo restaurantes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Cómo funciona el proceso</h2>
+    <div class="grid">
+      <div class="box">
+        <h3>1. Análisis</h3>
+        <p>Detectamos por qué el restaurante está perdiendo clientes online.</p>
+      </div>
+      <div class="box">
+        <h3>2. Sistema</h3>
+        <p>Creamos una estructura optimizada para reservas y contacto directo.</p>
+      </div>
+      <div class="box">
+        <h3>3. Resultados</h3>
+        <p>Más llamadas, más reservas, menos mesas vacías.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKS REESTRUCTURADOS -->
+<section class="gray">
+  <div class="container">
+    <h2>Soluciones según el punto en el que esté tu negocio</h2>
+    <p>
+      Trabajamos por niveles, desde un diagnóstico inicial
+      hasta un sistema completo de captación.
+    </p>
+
+    <div class="grid">
+
+      <div class="box">
+        <span class="badge">GRATIS</span>
+        <h3>Auditoría de pérdidas de clientes</h3>
+        <div class="price">0 €</div>
+        <ul>
+          <li>Errores claros que hacen perder reservas</li>
+          <li>Qué debería tener tu web para captar clientes</li>
+          <li>Demo web personalizada</li>
+        </ul>
+        <p><em>“No te vendo nada. Te enseño dónde estás perdiendo dinero y luego decides.”</em></p>
+      </div>
+
+      <div class="box">
+        <span class="badge">LOW-TICKET</span>
+        <h3>Web base funcional</h3>
+        <div class="price">297 €</div>
+        <ul>
+          <li>Web completa (3–5 secciones)</li>
+          <li>Adaptada a móvil</li>
+          <li>Carta visible</li>
+          <li>Botón llamada o WhatsApp</li>
+          <li>Textos claros</li>
+          <li>Entrega rápida (48–72h)</li>
+        </ul>
+        <p>Una web decente que no espante clientes.</p>
+      </div>
+
+      <div class="box">
+        <span class="badge">MEDIUM-TICKET</span>
+        <h3>Web optimizada para reservas</h3>
+        <div class="price">697 €</div>
+        <ul>
+          <li>Todo el low-ticket</li>
+          <li>Optimización a conversión</li>
+          <li>CTAs visibles</li>
+          <li>Formulario de reservas</li>
+          <li>WhatsApp flotante</li>
+          <li>Reseñas y SEO local básico</li>
+        </ul>
+        <p>Ahora tu web no solo está bien, ahora trabaja para ti.</p>
+      </div>
+
+      <div class="box">
+        <span class="badge">HIGH-TICKET</span>
+        <h3>Sistema completo de captación 24/7</h3>
+        <div class="price">Servicio personalizado</div>
+        <ul>
+          <li>Todo lo anterior</li>
+          <li>IA para FAQs, textos y reservas</li>
+          <li>Cambios mensuales</li>
+          <li>Mantenimiento continuo</li>
+          <li>Optimización según resultados</li>
+        </ul>
+        <p>Tranquilidad, automatización y escalado real.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="growth">
+  <div class="container">
+    <h2>Lleva tu negocio al siguiente nivel</h2>
+    <p>
+      Deja de depender del boca a boca y empieza a trabajar
+      con un sistema que capta clientes todos los días.
+    </p>
+  </div>
+</section>
+
+<section id="agenda" class="gray">
+  <div class="container">
+    <h2>Agenda una llamada estratégica</h2>
+    <p>
+      Llamadas de 08:00 a 22:00 · Duración aproximada: 1 hora
+    </p>
+    <a href="https://calendly.com/jesuscastanares5185/llamada-estrategica-duracion-1-hora"
+       class="btn" target="_blank">
+      Agendar llamada estratégica
+    </a>
+  </div>
+</section>
+
+<footer>
+  © 2026 · Restaurant Marketing Systems · Especialistas en hostelería
+</footer>
+
+</body>
+</html>
