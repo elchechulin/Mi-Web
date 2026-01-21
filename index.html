@@ -121,6 +121,13 @@ section{ padding:90px 20px; }
   background:#fff;
 }
 
+/* Calendly pequeño en hero */
+header .calendly-inline-widget{
+  box-shadow:0 12px 35px rgba(0,0,0,.35);
+  margin-top:40px;
+  max-width:420px;
+}
+
 /* Footer */
 footer{
   background:#111;
@@ -132,6 +139,7 @@ footer{
 
 @media(max-width:768px){
   h1{font-size:2.2rem;}
+  header .calendly-inline-widget{ display:none; }
 }
 </style>
 </head>
@@ -149,7 +157,14 @@ footer{
       Creamos sistemas digitales que convierten visitas online en reservas reales,
       sin que el dueño del negocio tenga que aprender marketing ni tecnología.
     </p>
+
     <a href="#agenda" class="btn">Agendar llamada estratégica</a>
+
+    <!-- Calendly pequeño -->
+    <div class="calendly-inline-widget"
+         data-url="https://calendly.com/jesuscastanares5185/llamada-estrategica-duracion-1-hora"
+         style="min-width:320px;height:420px;">
+    </div>
   </div>
 </header>
 
@@ -172,7 +187,7 @@ footer{
     <div class="grid">
       <div class="box">
         <h3>Enfoque a reservas</h3>
-        <p>No diseñamos webs bonitas, diseñamos decisiones: llamar, reservar o escribir.</p>
+        <p>No diseñamos webs bonitas, diseñamos decisiones.</p>
       </div>
       <div class="box">
         <h3>Sistema 24/7</h3>
@@ -186,7 +201,6 @@ footer{
   </div>
 </section>
 
-<!-- PACKS -->
 <section>
   <div class="container">
     <h2>Soluciones según el punto en el que esté tu negocio</h2>
@@ -199,10 +213,10 @@ footer{
         <p class="price">0 €</p>
         <ul>
           <li>Errores claros que hacen perder reservas</li>
-          <li>Qué debería tener tu web para captar clientes</li>
+          <li>Qué debería tener tu web</li>
           <li>Demo web personalizada</li>
         </ul>
-        <p><em>“No te vendo nada. Te enseño dónde estás perdiendo dinero y luego decides.”</em></p>
+        <p><em>No te vendo nada. Te enseño dónde estás perdiendo dinero.</em></p>
       </div>
 
       <div class="box">
@@ -211,11 +225,9 @@ footer{
         <p class="price">297 € <span class="iva">+ IVA</span></p>
         <ul>
           <li>Web completa (3–5 secciones)</li>
-          <li>Adaptada a móvil</li>
+          <li>Móvil</li>
           <li>Carta visible</li>
-          <li>Botón llamada o WhatsApp</li>
-          <li>Textos claros</li>
-          <li>Entrega rápida (48–72h)</li>
+          <li>WhatsApp o llamada</li>
         </ul>
         <p><strong>Una web decente que no espanta clientes.</strong></p>
       </div>
@@ -226,27 +238,23 @@ footer{
         <p class="price">697 € – 797 € <span class="iva">+ IVA</span></p>
         <ul>
           <li>Todo el low-ticket</li>
-          <li>Optimización a conversión</li>
-          <li>CTAs visibles todo el tiempo</li>
-          <li>Formulario de reservas</li>
-          <li>WhatsApp flotante</li>
-          <li>Reseñas y SEO local básico</li>
+          <li>CTAs visibles</li>
+          <li>Formulario</li>
+          <li>SEO local</li>
         </ul>
-        <p><strong>Ahora tu web no solo está bien, ahora trabaja para ti.</strong></p>
+        <p><strong>Ahora tu web trabaja para ti.</strong></p>
       </div>
 
       <div class="box">
         <span class="badge">HIGH-TICKET</span>
-        <h3>Sistema completo de captación 24/7</h3>
+        <h3>Sistema completo 24/7</h3>
         <p class="price">Servicio personalizado</p>
         <ul>
-          <li>Todo lo anterior</li>
-          <li>IA para FAQs, textos y reservas</li>
-          <li>Cambios mensuales</li>
-          <li>Mantenimiento continuo</li>
-          <li>Optimización según resultados</li>
+          <li>IA + automatización</li>
+          <li>Mantenimiento</li>
+          <li>Optimización continua</li>
         </ul>
-        <p><strong>Tranquilidad, automatización y escalado real.</strong></p>
+        <p><strong>Escala tu negocio con tranquilidad.</strong></p>
       </div>
 
     </div>
@@ -255,15 +263,10 @@ footer{
   </div>
 </section>
 
-<!-- AGENDA -->
 <section id="agenda" class="gray">
   <div class="container">
     <h2>Agenda una llamada estratégica</h2>
-    <p>
-      Reserva una llamada de 1 hora para analizar tu negocio y ver
-      si tiene sentido implementar un sistema de captación.
-    </p>
-    <p><strong>Horario de atención: 09:00 a 22:00</strong></p>
+    <p>Llamadas de 09:00 a 22:00 · Duración: 1 hora</p>
 
     <a href="https://calendly.com/jesuscastanares5185/llamada-estrategica-duracion-1-hora"
        class="btn" target="_blank">
@@ -285,7 +288,6 @@ footer{
   © 2026 · Restaurant Marketing Systems · Especialistas en hostelería
 </footer>
 
-<!-- Calendly Script -->
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
 </body>
