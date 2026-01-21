@@ -18,22 +18,33 @@ body{
   line-height:1.6;
 }
 
-/* Color fuego para acción */
-.btn:hover {
-  background: #ff4500;
-  transition: background 0.3s ease;
+/* Botones */
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:16px 34px;
+  background:#e10600;
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:6px;
+}
+.btn:hover{
+  background:#ff4500;
+  transition: background .3s ease;
 }
 
-/* Detalles fuego en títulos clave */
-h2::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: #ff4500;
-  margin-top: 10px;
+/* Detalles fuego */
+h2::after{
+  content:"";
+  display:block;
+  width:60px;
+  height:4px;
+  background:#ff4500;
+  margin-top:10px;
 }
 
+/* Header */
 header{
   position:relative;
   background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
@@ -49,49 +60,22 @@ header{
   top:30px;
   left:30px;
 }
-
-.logo img{
-  height:55px;
-}
+.logo img{ height:55px; }
 
 .container{
   max-width:1100px;
   margin:auto;
 }
 
-h1{
-  font-size:3rem;
-  margin-bottom:20px;
-}
+h1{ font-size:3rem; margin-bottom:20px; }
+h2{ font-size:2rem; margin-bottom:15px; }
+h3{ margin-top:0; }
 
-h2{
-  font-size:2rem;
-  margin-bottom:15px;
-}
+/* Secciones */
+section{ padding:90px 20px; }
+.gray{ background:#f5f5f5; }
 
-h3{
-  margin-top:0;
-}
-
-.btn{
-  display:inline-block;
-  margin-top:25px;
-  padding:16px 34px;
-  background:#e10600;
-  color:#fff;
-  text-decoration:none;
-  font-weight:bold;
-  border-radius:6px;
-}
-
-section{
-  padding:90px 20px;
-}
-
-.gray{
-  background:#f5f5f5;
-}
-
+/* Grid */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -105,12 +89,22 @@ section{
   box-shadow:0 8px 25px rgba(0,0,0,.05);
 }
 
-footer{
-  background:#111;
+/* Packs */
+.price{
+  font-size:1.8rem;
+  font-weight:bold;
+  margin:15px 0;
+  color:#e10600;
+}
+.badge{
+  display:inline-block;
+  padding:6px 14px;
+  font-size:.75rem;
+  font-weight:bold;
+  border-radius:20px;
+  background:#ff4500;
   color:#fff;
-  text-align:center;
-  padding:40px 20px;
-  font-size:.9rem;
+  margin-bottom:10px;
 }
 
 /* IVA discreto */
@@ -118,6 +112,15 @@ footer{
   font-size:0.8rem;
   color:#777;
   font-weight:normal;
+}
+
+/* Footer */
+footer{
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:40px 20px;
+  font-size:.9rem;
 }
 
 @media(max-width:768px){
@@ -130,7 +133,7 @@ footer{
 
 <header>
   <div class="logo">
-    <img src="logo.png" alt="Restaurant Marketing">
+    <img src="logo.png" alt="Restaurant Marketing Systems">
   </div>
 
   <div class="container">
@@ -176,33 +179,67 @@ footer{
   </div>
 </section>
 
+<!-- PACKS -->
 <section>
   <div class="container">
-    <h2>Packs y soluciones</h2>
+    <h2>Soluciones según el punto en el que esté tu negocio</h2>
+
     <div class="grid">
 
       <div class="box">
-        <h3>Gancho gratuito</h3>
-        <p><strong>0 €</strong></p>
-        <p>Auditoría de pérdidas de clientes + demo web personalizada.</p>
+        <span class="badge">GRATIS</span>
+        <h3>Auditoría de pérdidas de clientes</h3>
+        <p class="price">0 €</p>
+        <ul>
+          <li>Errores claros que hacen perder reservas</li>
+          <li>Qué debería tener tu web para captar clientes</li>
+          <li>Demo web personalizada</li>
+        </ul>
+        <p><em>“No te vendo nada. Te enseño dónde estás perdiendo dinero y luego decides.”</em></p>
       </div>
 
       <div class="box">
+        <span class="badge">LOW-TICKET</span>
         <h3>Web base funcional</h3>
-        <p><strong>297 €</strong> <span class="iva">+ IVA</span></p>
-        <p>Web completa, móvil, carta visible y contacto directo.</p>
+        <p class="price">297 € <span class="iva">+ IVA</span></p>
+        <ul>
+          <li>Web completa (3–5 secciones)</li>
+          <li>Adaptada a móvil</li>
+          <li>Carta visible</li>
+          <li>Botón llamada o WhatsApp</li>
+          <li>Textos claros</li>
+          <li>Entrega rápida (48–72h)</li>
+        </ul>
+        <p><strong>Una web decente que no espanta clientes.</strong></p>
       </div>
 
       <div class="box">
-        <h3>Web optimizada a reservas</h3>
-        <p><strong>697 € – 797 €</strong> <span class="iva">+ IVA</span></p>
-        <p>Web enfocada a conversión, formularios, reseñas y SEO local.</p>
+        <span class="badge">MEDIUM-TICKET</span>
+        <h3>Web optimizada para reservas</h3>
+        <p class="price">697 € – 797 € <span class="iva">+ IVA</span></p>
+        <ul>
+          <li>Todo el low-ticket</li>
+          <li>Optimización a conversión</li>
+          <li>CTAs visibles todo el tiempo</li>
+          <li>Formulario de reservas</li>
+          <li>WhatsApp flotante</li>
+          <li>Reseñas y SEO local básico</li>
+        </ul>
+        <p><strong>Ahora tu web no solo está bien, ahora trabaja para ti.</strong></p>
       </div>
 
       <div class="box">
-        <h3>Sistema avanzado de captación</h3>
-        <p><strong>Precio personalizado</strong></p>
-        <p>Sistema completo 24/7 con automatización, IA y mantenimiento continuo.</p>
+        <span class="badge">HIGH-TICKET</span>
+        <h3>Sistema completo de captación 24/7</h3>
+        <p class="price">Servicio personalizado</p>
+        <ul>
+          <li>Todo lo anterior</li>
+          <li>IA para FAQs, textos y reservas</li>
+          <li>Cambios mensuales</li>
+          <li>Mantenimiento continuo</li>
+          <li>Optimización según resultados</li>
+        </ul>
+        <p><strong>Tranquilidad, automatización y escalado real.</strong></p>
       </div>
 
     </div>
@@ -215,10 +252,10 @@ footer{
   <div class="container">
     <h2>Agenda una llamada</h2>
     <p>
-      Las llamadas se realizan de 08:00 a 22:00, con una duración aproximada
-      de 1 hora.
+      Llamadas de 08:00 a 22:00 · Duración aproximada: 1 hora
     </p>
-    <a href="https://calendly.com/jesuscastanares5185/llamada-estrategica-duracion-1-hora" class="btn" target="_blank">
+    <a href="https://calendly.com/jesuscastanares5185/llamada-estrategica-duracion-1-hora"
+       class="btn" target="_blank">
       Agendar llamada estratégica
     </a>
   </div>
