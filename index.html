@@ -114,6 +114,13 @@ section{ padding:90px 20px; }
   font-weight:normal;
 }
 
+/* Calendly */
+.calendly-inline-widget{
+  border-radius:12px;
+  overflow:hidden;
+  background:#fff;
+}
+
 /* Footer */
 footer{
   background:#111;
@@ -195,7 +202,7 @@ footer{
           <li>Qué debería tener tu web para captar clientes</li>
           <li>Demo web personalizada</li>
         </ul>
-        <p><strong>“No te vendo nada. Te enseño dónde estás perdiendo dinero y luego decides.”</strong></p>
+        <p><em>“No te vendo nada. Te enseño dónde estás perdiendo dinero y luego decides.”</em></p>
       </div>
 
       <div class="box">
@@ -248,16 +255,29 @@ footer{
   </div>
 </section>
 
+<!-- AGENDA -->
 <section id="agenda" class="gray">
   <div class="container">
-    <h2>Agenda una llamada</h2>
+    <h2>Agenda una llamada estratégica</h2>
     <p>
-      Llamadas de 08:00 a 22:00 · Duración aproximada: 1 hora
+      Reserva una llamada de 1 hora para analizar tu negocio y ver
+      si tiene sentido implementar un sistema de captación.
     </p>
+    <p><strong>Horario de atención: 09:00 a 22:00</strong></p>
+
     <a href="https://calendly.com/jesuscastanares5185/llamada-estrategica-duracion-1-hora"
        class="btn" target="_blank">
-      Agendar llamada estratégica
+      Agendar llamada ahora
     </a>
+
+    <p style="margin-top:30px;"><strong>⚠️ Plazas limitadas cada semana.</strong></p>
+
+    <div style="margin-top:40px;">
+      <div class="calendly-inline-widget"
+           data-url="https://calendly.com/jesuscastanares5185/llamada-estrategica-duracion-1-hora"
+           style="min-width:320px;height:700px;">
+      </div>
+    </div>
   </div>
 </section>
 
@@ -265,6 +285,8 @@ footer{
   © 2026 · Restaurant Marketing Systems · Especialistas en hostelería
 </footer>
 
+<!-- Calendly Script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
 </body>
 </html>
-
