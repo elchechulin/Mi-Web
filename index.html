@@ -148,6 +148,42 @@ footer a:hover{
   text-decoration:underline;
 }
 
+/* Banner cookies */
+.cookie-banner{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#1f2937;
+  color:#fff;
+  padding:16px;
+  display:none;
+  z-index:9999;
+  font-size:14px;
+}
+.cookie-banner a{
+  color:#60a5fa;
+  text-decoration:underline;
+}
+.cookie-buttons{
+  margin-top:10px;
+}
+.cookie-buttons button{
+  margin-right:10px;
+  padding:8px 14px;
+  border:none;
+  cursor:pointer;
+  border-radius:4px;
+}
+#acceptCookies{
+  background:#22c55e;
+  color:#000;
+}
+#rejectCookies{
+  background:#ef4444;
+  color:#fff;
+}
+
 /* Responsive */
 @media(max-width:768px){
   h1{font-size:2.2rem;}
@@ -277,6 +313,37 @@ footer a:hover{
      Gestión de suscripción
   </a>
 </footer>
+
+<!-- BANNER COOKIES -->
+<div id="cookie-banner" class="cookie-banner">
+  <p>
+    Utilizamos cookies propias y de terceros para el correcto funcionamiento del sitio y mejorar la experiencia.
+    Puedes aceptar o rechazar su uso.
+    <a href="/politica-cookies.html">Más información</a>
+  </p>
+  <div class="cookie-buttons">
+    <button id="acceptCookies">Aceptar</button>
+    <button id="rejectCookies">Rechazar</button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+    const banner = document.getElementById("cookie-banner");
+    const choice = localStorage.getItem("cookiesAccepted");
+    if(!choice){
+      banner.style.display = "block";
+    }
+    document.getElementById("acceptCookies").onclick = function(){
+      localStorage.setItem("cookiesAccepted","yes");
+      banner.style.display="none";
+    };
+    document.getElementById("rejectCookies").onclick = function(){
+      localStorage.setItem("cookiesAccepted","no");
+      banner.style.display="none";
+    };
+  });
+</script>
 
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
