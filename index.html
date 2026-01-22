@@ -72,12 +72,8 @@ h2{ font-size:2rem; margin-bottom:15px; }
 h3{ margin-top:0; }
 
 /* Secciones */
-section{
-  padding:90px 20px;
-}
-.gray{
-  background:#f5f5f5;
-}
+section{ padding:90px 20px; }
+.gray{ background:#f5f5f5; }
 
 /* Grid */
 .grid{
@@ -122,12 +118,19 @@ section{
   overflow:hidden;
   background:#fff;
 }
-
-/* Calendly pequeño en hero */
 header .calendly-inline-widget{
   box-shadow:0 12px 35px rgba(0,0,0,.35);
   margin-top:40px;
   max-width:420px;
+}
+
+/* FAQ */
+.faq-item{
+  margin-bottom:25px;
+}
+.faq-item h3{
+  margin-bottom:8px;
+  font-size:1.1rem;
 }
 
 /* Footer */
@@ -144,11 +147,9 @@ footer a{
   font-size:.85rem;
   text-decoration:none;
 }
-footer a:hover{
-  text-decoration:underline;
-}
+footer a:hover{ text-decoration:underline; }
 
-/* Banner cookies */
+/* Cookies */
 .cookie-banner{
   position:fixed;
   bottom:0;
@@ -161,13 +162,8 @@ footer a:hover{
   z-index:9999;
   font-size:14px;
 }
-.cookie-banner a{
-  color:#60a5fa;
-  text-decoration:underline;
-}
-.cookie-buttons{
-  margin-top:10px;
-}
+.cookie-banner a{ color:#60a5fa; text-decoration:underline; }
+.cookie-buttons{ margin-top:10px; }
 .cookie-buttons button{
   margin-right:10px;
   padding:8px 14px;
@@ -175,16 +171,9 @@ footer a:hover{
   cursor:pointer;
   border-radius:4px;
 }
-#acceptCookies{
-  background:#22c55e;
-  color:#000;
-}
-#rejectCookies{
-  background:#ef4444;
-  color:#fff;
-}
+#acceptCookies{ background:#22c55e; color:#000; }
+#rejectCookies{ background:#ef4444; color:#fff; }
 
-/* Responsive */
 @media(max-width:768px){
   h1{font-size:2.2rem;}
   header .calendly-inline-widget{ display:none; }
@@ -205,9 +194,7 @@ footer a:hover{
       Creamos sistemas digitales que convierten visitas online en reservas reales,
       sin que el dueño del negocio tenga que aprender marketing ni tecnología.
     </p>
-
     <a href="#agenda" class="btn">Agendar llamada estratégica</a>
-
     <div class="calendly-inline-widget"
          data-url="https://calendly.com/jesuscastanares5185/llamada-estrategica-duracion-1-hora"
          style="min-width:320px;height:420px;">
@@ -218,14 +205,8 @@ footer a:hover{
 <section>
   <div class="container">
     <h2>El problema real</h2>
-    <p>
-      La mayoría de restaurantes tienen buena comida, buen servicio y buena ubicación,
-      pero siguen teniendo mesas vacías porque su presencia online no convierte.
-    </p>
-    <p>
-      Una web mal planteada no informa:
-      <strong>hace que el cliente se vaya</strong>.
-    </p>
+    <p>Muchos restaurantes tienen buena comida pero mesas vacías porque su web no convierte.</p>
+    <p><strong>Una web mal planteada hace que el cliente se vaya.</strong></p>
   </div>
 </section>
 
@@ -233,59 +214,42 @@ footer a:hover{
   <div class="container">
     <h2>Qué hacemos diferente</h2>
     <div class="grid">
-      <div class="box">
-        <h3>Enfoque a reservas</h3>
-        <p>No diseñamos webs bonitas, diseñamos decisiones.</p>
-      </div>
-      <div class="box">
-        <h3>Sistema 24/7</h3>
-        <p>Tu negocio capta clientes incluso cuando estás cerrado.</p>
-      </div>
-      <div class="box">
-        <h3>Especialistas en hostelería</h3>
-        <p>No trabajamos con todo el mundo. Solo restaurantes.</p>
-      </div>
+      <div class="box"><h3>Enfoque a reservas</h3><p>Decisiones claras: llamar o reservar.</p></div>
+      <div class="box"><h3>Sistema 24/7</h3><p>Tu web trabaja incluso cerrados.</p></div>
+      <div class="box"><h3>Especialistas</h3><p>Solo hostelería.</p></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <h2>Soluciones según el punto en el que esté tu negocio</h2>
+    <h2>Preguntas frecuentes</h2>
 
-    <div class="grid">
-
-      <div class="box">
-        <span class="badge">GRATIS</span>
-        <h3>Auditoría de pérdidas de clientes</h3>
-        <p class="price">0 €</p>
-        <p><strong>No te vendo nada. Te enseño dónde estás perdiendo dinero.</strong></p>
-      </div>
-
-      <div class="box">
-        <span class="badge">LOW-TICKET</span>
-        <h3>Web base funcional</h3>
-        <p class="price">317 € <span class="iva">IVA incluido</span></p>
-        <p><strong>Una web decente que no espanta clientes.</strong></p>
-      </div>
-
-      <div class="box">
-        <span class="badge">MEDIUM-TICKET</span>
-        <h3>Web optimizada para reservas</h3>
-        <p class="price">697 € – 947 € <span class="iva">IVA incluido</span></p>
-        <p><strong>Ahora tu web trabaja para ti.</strong></p>
-      </div>
-
-      <div class="box">
-        <span class="badge">HIGH-TICKET</span>
-        <h3>Sistema completo 24/7</h3>
-        <p class="price">Servicio personalizado</p>
-        <p><strong>Escala tu negocio con tranquilidad.</strong></p>
-      </div>
-
+    <div class="faq-item">
+      <h3>¿Garantizáis resultados?</h3>
+      <p>No. Aplicamos sistemas probados, pero no garantizamos número de reservas ni ingresos.</p>
     </div>
 
-    <p class="iva">* Todos los precios indicados incluyen IVA</p>
+    <div class="faq-item">
+      <h3>¿Puedo cancelar cuando quiera?</h3>
+      <p>Sí. La cancelación es efectiva al final del periodo mensual ya pagado.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Qué pasa si la web se cae?</h3>
+      <p>Pueden existir incidencias técnicas temporales que no constituyen incumplimiento contractual.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿La web es mía?</h3>
+      <p>La web y el sistema forman parte del servicio. Al cancelar, se desactiva.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Monitorizáis resultados?</h3>
+      <p>Sí. Analizamos métricas y conversiones para optimizar el servicio.</p>
+    </div>
+
   </div>
 </section>
 
@@ -293,7 +257,6 @@ footer a:hover{
   <div class="container">
     <h2>Agenda una llamada estratégica</h2>
     <p>Llamadas de 09:00 a 22:00 · Duración: 1 hora</p>
-
     <div class="calendly-inline-widget"
          data-url="https://calendly.com/jesuscastanares5185/llamada-estrategica-duracion-1-hora"
          style="min-width:320px;height:700px;">
@@ -308,17 +271,15 @@ footer a:hover{
   <a href="/politica-privacidad.html">Política de privacidad</a> |
   <a href="/politica-cookies.html">Política de cookies</a> |
   <a href="/terminos-del-servicio.html">Términos del servicio</a> |
-  <a href="https://billing.stripe.com/p/login/00w14of358iMes58KSa3u00"
-     target="_blank" rel="noopener">
-     Gestión de suscripción
+  <a href="https://billing.stripe.com/p/login/00w14of358iMes58KSa3u00" target="_blank" rel="noopener">
+    Gestión de suscripción
   </a>
 </footer>
 
-<!-- BANNER COOKIES -->
+<!-- Cookies -->
 <div id="cookie-banner" class="cookie-banner">
   <p>
-    Utilizamos cookies propias y de terceros para el correcto funcionamiento del sitio y mejorar la experiencia.
-    Puedes aceptar o rechazar su uso.
+    Utilizamos cookies propias y de terceros. Puedes aceptar o rechazar su uso.
     <a href="/politica-cookies.html">Más información</a>
   </p>
   <div class="cookie-buttons">
@@ -328,21 +289,20 @@ footer a:hover{
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function(){
-    const banner = document.getElementById("cookie-banner");
-    const choice = localStorage.getItem("cookiesAccepted");
-    if(!choice){
-      banner.style.display = "block";
-    }
-    document.getElementById("acceptCookies").onclick = function(){
-      localStorage.setItem("cookiesAccepted","yes");
-      banner.style.display="none";
-    };
-    document.getElementById("rejectCookies").onclick = function(){
-      localStorage.setItem("cookiesAccepted","no");
-      banner.style.display="none";
-    };
-  });
+document.addEventListener("DOMContentLoaded", function(){
+  const banner = document.getElementById("cookie-banner");
+  if(!localStorage.getItem("cookiesAccepted")){
+    banner.style.display="block";
+  }
+  document.getElementById("acceptCookies").onclick = function(){
+    localStorage.setItem("cookiesAccepted","yes");
+    banner.style.display="none";
+  };
+  document.getElementById("rejectCookies").onclick = function(){
+    localStorage.setItem("cookiesAccepted","no");
+    banner.style.display="none";
+  };
+});
 </script>
 
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
