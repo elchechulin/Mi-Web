@@ -2,58 +2,136 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Checkout cliente</title>
+  <title>Finalizar contratación</title>
   <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 40px;
+    }
+
+    .box {
+      max-width: 600px;
+      margin: auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 8px 0;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+    }
+
+    button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
+      background: #0a66ff;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    button.enabled {
+      cursor: pointer;
+      opacity: 1;
+    }
+  </style>
 </head>
 
 <body>
 
-<h1>Prueba checkout cliente</h1>
+<div class="box">
+  <h1 id="ticketName">Finalizar contratación</h1>
 
-<p id="planInfo"></p>
+  <p><strong>Precio:</strong> <span id="ticketPrice"></span></p>
+  <p>Servicio recurrente. Sin reembolsos.</p>
+  <p>El servicio se inicia de forma inmediata tras el pago.</p>
 
-<label>
-  <input type="checkbox" id="terms">
-  Acepto los <a href="/terminos-del-servicio.html" target="_blank">Términos</a>
-</label>
+  <label>
+    <input type="checkbox" id="terms">
+    He leído y acepto expresamente los
+    <a href="/terminos-del-servicio.html" target="_blank">
+      Términos del Servicio
+    </a>.
+  </label>
 
-<br><br>
-
-<button id="payBtn" disabled>Continuar</button>
+  <button id="payBtn" disabled>
+    Continuar al pago
+  </button>
+</div>
 
 <script>
-  console.log("JS cargado");
+  /* ===============================
+     CONFIGURACIÓN DE TICKETS
+     =============================== */
 
-  const plans = {
-    pro: {
-      name: "Plan Pro",
-      stripe: "https://google.com"
+  const tickets = {
+    low: {
+      name: "Low-ticket",
+      price: "197 € / mes",
+      stripe: "PEGA_AQUI_TU_STRIPE_LOW_TICKET"
+    },
+    medium: {
+      name: "Medium-ticket",
+      price: "317 € / mes",
+      stripe: "PEGA_AQUI_TU_STRIPE_MEDIUM_TICKET"
+    },
+    high: {
+      name: "High-ticket",
+      price: "497 € / mes",
+      stripe: "PEGA_AQUI_TU_STRIPE_HIGH_TICKET"
     }
   };
 
+  /* ===============================
+     DETECTAR TICKET DESDE LA URL
+     =============================== */
+
   const params = new URLSearchParams(window.location.search);
-  const planKey = params.get("plan");
+  const ticketKey = params.get("ticket");
 
-  console.log("Plan:", planKey);
-
-  if (!plans[planKey]) {
-    alert("Plan no válido");
-  } else {
-    document.getElementById("planInfo").innerText = plans[planKey].name;
+  if (!tickets[ticketKey]) {
+    window.location.href = "/";
   }
+
+  document.getElementById("ticketName").innerText = tickets[ticketKey].name;
+  document.getElementById("ticketPrice").innerText = tickets[ticketKey].price;
+
+  /* ===============================
+     CHECKBOX + BOTÓN
+     =============================== */
 
   const checkbox = document.getElementById("terms");
   const button = document.getElementById("payBtn");
 
   checkbox.addEventListener("change", function () {
-    console.log("Checkbox:", this.checked);
-    button.disabled = !this.checked;
+    if (this.checked) {
+      button.disabled = false;
+      button.classList.add("enabled");
+    } else {
+      button.disabled = true;
+      button.classList.remove("enabled");
+    }
   });
 
   button.addEventListener("click", function () {
-    console.log("Botón clicado");
-    window.location.href = plans[planKey].stripe;
+    window.location.href = tickets[ticketKey].stripe;
   });
 </script>
 
