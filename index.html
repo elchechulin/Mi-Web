@@ -16,12 +16,8 @@ body{
   line-height:1.6;
 }
 
-.container{
-  max-width:1100px;
-  margin:auto;
-}
+.container{max-width:1100px;margin:auto;}
 
-/* Botones */
 .btn{
   display:inline-block;
   margin-top:25px;
@@ -32,9 +28,8 @@ body{
   font-weight:bold;
   border-radius:6px;
 }
-.btn:hover{ background:#ff4500; }
+.btn:hover{background:#ff4500;}
 
-/* Header */
 header{
   position:relative;
   background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
@@ -45,15 +40,11 @@ header{
   padding:140px 20px;
 }
 
-.logo{
-  position:absolute;
-  top:30px;
-  left:30px;
-}
-.logo img{ height:55px; }
+.logo{position:absolute;top:30px;left:30px;}
+.logo img{height:55px;}
 
-h1{ font-size:3rem; margin-bottom:20px; }
-h2{ font-size:2rem; margin-bottom:15px; }
+h1{font-size:3rem;margin-bottom:20px;}
+h2{font-size:2rem;margin-bottom:15px;}
 h2::after{
   content:"";
   display:block;
@@ -63,8 +54,8 @@ h2::after{
   margin-top:10px;
 }
 
-section{ padding:90px 20px; }
-.gray{ background:#f5f5f5; }
+section{padding:90px 20px;}
+.gray{background:#f5f5f5;}
 
 .grid{
   display:grid;
@@ -97,44 +88,18 @@ section{ padding:90px 20px; }
   margin:15px 0;
 }
 
-.iva{
-  font-size:.8rem;
-  color:#777;
-}
+.iva{font-size:.8rem;color:#777;}
 
 /* FAQ */
-.faq{
-  max-width:800px;
-  margin:auto;
-}
-.faq-item{
-  border-bottom:1px solid #ddd;
-  padding:15px 0;
-}
-.faq-item input{ display:none; }
-.faq-item label{
-  font-weight:bold;
-  cursor:pointer;
-  display:block;
-  position:relative;
-}
-.faq-item label::after{
-  content:"+";
-  position:absolute;
-  right:0;
-}
-.faq-item input:checked + label::after{ content:"–"; }
-.faq-content{
-  max-height:0;
-  overflow:hidden;
-  transition:max-height .3s ease;
-}
-.faq-item input:checked ~ .faq-content{
-  max-height:300px;
-  margin-top:10px;
-}
+.faq{max-width:800px;margin:auto;}
+.faq-item{border-bottom:1px solid #ddd;padding:15px 0;}
+.faq-item input{display:none;}
+.faq-item label{font-weight:bold;cursor:pointer;display:block;position:relative;}
+.faq-item label::after{content:"+";position:absolute;right:0;}
+.faq-item input:checked + label::after{content:"–";}
+.faq-content{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+.faq-item input:checked ~ .faq-content{max-height:300px;margin-top:10px;}
 
-/* Footer */
 footer{
   background:#111;
   color:#fff;
@@ -142,12 +107,8 @@ footer{
   padding:40px 20px;
   font-size:.9rem;
 }
-footer a{
-  color:#fff;
-  margin:0 8px;
-  text-decoration:none;
-}
-footer a:hover{ text-decoration:underline; }
+footer a{color:#fff;margin:0 8px;text-decoration:none;}
+footer a:hover{text-decoration:underline;}
 
 /* === COOKIE BANNER PRO === */
 #cookie-banner{
@@ -165,65 +126,63 @@ footer a:hover{ text-decoration:underline; }
   z-index:9999;
   display:none;
 }
-#cookie-banner p{
-  margin:0;
-  font-size:.95rem;
-}
-#cookie-banner a{
-  color:#ff4500;
-  text-decoration:underline;
-}
-.cookie-actions{
-  display:flex;
-  gap:12px;
-  margin-top:15px;
-  flex-wrap:wrap;
-}
-.cookie-btn{
-  padding:10px 18px;
-  border-radius:6px;
-  font-weight:bold;
-  cursor:pointer;
-  border:none;
-}
-.cookie-accept{
-  background:#e10600;
-  color:#fff;
-}
-.cookie-reject{
-  background:#333;
-  color:#fff;
-}
-.cookie-settings{
-  background:transparent;
-  color:#bbb;
-  text-decoration:underline;
-}
-
-@media(max-width:768px){
-  h1{ font-size:2.2rem; }
-}
+#cookie-banner a{color:#ff4500;text-decoration:underline;}
+.cookie-actions{display:flex;gap:12px;margin-top:15px;flex-wrap:wrap;}
+.cookie-btn{padding:10px 18px;border-radius:6px;font-weight:bold;border:none;cursor:pointer;}
+.cookie-accept{background:#e10600;color:#fff;}
+.cookie-reject{background:#333;color:#fff;}
+.cookie-settings{background:transparent;color:#bbb;text-decoration:underline;}
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">
-    <img src="logo.png" alt="Restaurant Marketing Systems">
-  </div>
-
+  <div class="logo"><img src="logo.png" alt="Restaurant Marketing Systems"></div>
   <div class="container">
     <h1>Sistemas de captación que llenan restaurantes</h1>
-    <p>Creamos sistemas digitales que convierten visitas online en reservas reales.</p>
+    <p>
+      Creamos sistemas digitales que convierten visitas online en reservas reales,
+      sin que el dueño del negocio tenga que aprender marketing ni tecnología.
+    </p>
     <a href="#agenda" class="btn">Agendar llamada estratégica</a>
   </div>
 </header>
 
 <section>
   <div class="container">
-    <h2>Soluciones según el punto en el que esté tu negocio</h2>
+    <h2>El problema real</h2>
+    <p>
+      La mayoría de restaurantes tienen buena comida, buen servicio y buena ubicación,
+      pero siguen teniendo mesas vacías porque su presencia online no convierte.
+    </p>
+    <p><strong>Una web mal planteada hace que el cliente se vaya.</strong></p>
+  </div>
+</section>
 
+<section class="gray">
+  <div class="container">
+    <h2>Qué hacemos diferente</h2>
+    <div class="grid">
+      <div class="box">
+        <h3>Enfoque a reservas</h3>
+        <p>No diseñamos webs bonitas, diseñamos decisiones.</p>
+      </div>
+      <div class="box">
+        <h3>Sistema 24/7</h3>
+        <p>Tu negocio capta clientes incluso cuando estás cerrado.</p>
+      </div>
+      <div class="box">
+        <h3>Especialistas en hostelería</h3>
+        <p>No trabajamos con todo el mundo. Solo restaurantes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Soluciones según el punto en el que esté tu negocio</h2>
     <div class="grid">
 
       <div class="box">
@@ -244,9 +203,9 @@ footer a:hover{ text-decoration:underline; }
         <p class="price">317 € <span class="iva">IVA incluido</span></p>
         <ul>
           <li>Web completa (3–5 secciones)</li>
-          <li>Móvil</li>
+          <li>Adaptada a móvil</li>
           <li>Carta visible</li>
-          <li>WhatsApp o llamada</li>
+          <li>Botón llamada o WhatsApp</li>
         </ul>
         <strong>Una web decente que no espanta clientes.</strong>
       </div>
@@ -284,23 +243,20 @@ footer a:hover{ text-decoration:underline; }
   <div class="container">
     <h2>Preguntas frecuentes</h2>
     <div class="faq">
-
       <div class="faq-item">
         <input type="checkbox" id="f1">
         <label for="f1">¿Hay permanencia?</label>
         <div class="faq-content">
-          <p>No. Puedes cancelar antes de la siguiente renovación mensual.</p>
+          <p>No. Puedes cancelar antes de la siguiente renovación.</p>
         </div>
       </div>
-
       <div class="faq-item">
         <input type="checkbox" id="f2">
         <label for="f2">¿Garantizáis resultados?</label>
         <div class="faq-content">
-          <p>No garantizamos ingresos ni reservas concretas, trabajamos optimizando el sistema.</p>
+          <p>No garantizamos resultados concretos, optimizamos el sistema.</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -320,17 +276,18 @@ footer a:hover{ text-decoration:underline; }
   <a href="/politica-privacidad.html">Política de privacidad</a> |
   <a href="/politica-cookies.html">Política de cookies</a> |
   <a href="/terminos-del-servicio.html">Términos del servicio</a> |
-  <a href="https://billing.stripe.com/p/login/00w14of358iMes58KSa3u00" target="_blank">Gestión de suscripción</a>
+  <a href="https://billing.stripe.com/p/login/00w14of358iMes58KSa3u00" target="_blank">
+    Gestión de suscripción
+  </a>
 </footer>
 
-<!-- COOKIE BANNER -->
 <div id="cookie-banner">
   <p>
-    Utilizamos cookies propias y de terceros para mejorar la experiencia y analizar el uso del sitio.
+    Utilizamos cookies para mejorar la experiencia.
     <a href="/politica-cookies.html">Más información</a>.
   </p>
   <div class="cookie-actions">
-    <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Aceptar todas</button>
+    <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Aceptar</button>
     <button class="cookie-btn cookie-reject" onclick="rejectCookies()">Rechazar</button>
     <button class="cookie-btn cookie-settings" onclick="openCookieSettings()">Configurar</button>
   </div>
