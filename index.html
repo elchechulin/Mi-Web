@@ -21,6 +21,7 @@ body{
   margin:auto;
 }
 
+/* Botones */
 .btn{
   display:inline-block;
   margin-top:25px;
@@ -31,20 +32,9 @@ body{
   font-weight:bold;
   border-radius:6px;
 }
-.btn:hover{
-  background:#ff4500;
-  transition: background .3s ease;
-}
+.btn:hover{ background:#ff4500; }
 
-h2::after{
-  content:"";
-  display:block;
-  width:60px;
-  height:4px;
-  background:#ff4500;
-  margin-top:10px;
-}
-
+/* Header */
 header{
   position:relative;
   background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
@@ -64,14 +54,17 @@ header{
 
 h1{ font-size:3rem; margin-bottom:20px; }
 h2{ font-size:2rem; margin-bottom:15px; }
-h3{ margin-top:0; }
+h2::after{
+  content:"";
+  display:block;
+  width:60px;
+  height:4px;
+  background:#ff4500;
+  margin-top:10px;
+}
 
-section{
-  padding:90px 20px;
-}
-.gray{
-  background:#f5f5f5;
-}
+section{ padding:90px 20px; }
+.gray{ background:#f5f5f5; }
 
 .grid{
   display:grid;
@@ -86,81 +79,62 @@ section{
   box-shadow:0 8px 25px rgba(0,0,0,.05);
 }
 
+.badge{
+  display:inline-block;
+  background:#ff4500;
+  color:#fff;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:.75rem;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
 .price{
   font-size:1.8rem;
   font-weight:bold;
-  margin:15px 0;
   color:#e10600;
+  margin:15px 0;
 }
-.badge{
-  display:inline-block;
-  padding:6px 14px;
-  font-size:.75rem;
-  font-weight:bold;
-  border-radius:20px;
-  background:#ff4500;
-  color:#fff;
-  margin-bottom:10px;
-}
+
 .iva{
-  font-size:0.8rem;
+  font-size:.8rem;
   color:#777;
-  font-weight:normal;
-}
-
-.calendly-inline-widget{
-  border-radius:12px;
-  overflow:hidden;
-  background:#fff;
-}
-
-header .calendly-inline-widget{
-  box-shadow:0 12px 35px rgba(0,0,0,.35);
-  margin-top:40px;
-  max-width:420px;
 }
 
 /* FAQ */
 .faq{
   max-width:800px;
-  margin:0 auto;
+  margin:auto;
 }
 .faq-item{
   border-bottom:1px solid #ddd;
   padding:15px 0;
 }
-.faq-item input{
-  display:none;
-}
+.faq-item input{ display:none; }
 .faq-item label{
-  display:block;
   font-weight:bold;
   cursor:pointer;
+  display:block;
   position:relative;
-  padding-right:25px;
 }
 .faq-item label::after{
   content:"+";
   position:absolute;
   right:0;
-  top:0;
-  font-size:18px;
 }
-.faq-item input:checked + label::after{
-  content:"–";
-}
+.faq-item input:checked + label::after{ content:"–"; }
 .faq-content{
   max-height:0;
   overflow:hidden;
   transition:max-height .3s ease;
-  font-size:.95rem;
-  color:#333;
 }
 .faq-item input:checked ~ .faq-content{
   max-height:300px;
   margin-top:10px;
 }
 
+/* Footer */
 footer{
   background:#111;
   color:#fff;
@@ -170,17 +144,64 @@ footer{
 }
 footer a{
   color:#fff;
-  margin:0 10px;
-  font-size:.85rem;
+  margin:0 8px;
   text-decoration:none;
 }
-footer a:hover{
+footer a:hover{ text-decoration:underline; }
+
+/* === COOKIE BANNER PRO === */
+#cookie-banner{
+  position:fixed;
+  bottom:25px;
+  left:25px;
+  right:25px;
+  max-width:1100px;
+  margin:auto;
+  background:#111;
+  color:#ddd;
+  padding:22px 28px;
+  border-radius:14px;
+  box-shadow:0 15px 40px rgba(0,0,0,.4);
+  z-index:9999;
+  display:none;
+}
+#cookie-banner p{
+  margin:0;
+  font-size:.95rem;
+}
+#cookie-banner a{
+  color:#ff4500;
+  text-decoration:underline;
+}
+.cookie-actions{
+  display:flex;
+  gap:12px;
+  margin-top:15px;
+  flex-wrap:wrap;
+}
+.cookie-btn{
+  padding:10px 18px;
+  border-radius:6px;
+  font-weight:bold;
+  cursor:pointer;
+  border:none;
+}
+.cookie-accept{
+  background:#e10600;
+  color:#fff;
+}
+.cookie-reject{
+  background:#333;
+  color:#fff;
+}
+.cookie-settings{
+  background:transparent;
+  color:#bbb;
   text-decoration:underline;
 }
 
 @media(max-width:768px){
-  h1{font-size:2.2rem;}
-  header .calendly-inline-widget{ display:none; }
+  h1{ font-size:2.2rem; }
 }
 </style>
 </head>
@@ -194,53 +215,10 @@ footer a:hover{
 
   <div class="container">
     <h1>Sistemas de captación que llenan restaurantes</h1>
-    <p>
-      Creamos sistemas digitales que convierten visitas online en reservas reales,
-      sin que el dueño del negocio tenga que aprender marketing ni tecnología.
-    </p>
-
+    <p>Creamos sistemas digitales que convierten visitas online en reservas reales.</p>
     <a href="#agenda" class="btn">Agendar llamada estratégica</a>
-
-    <div class="calendly-inline-widget"
-         data-url="https://calendly.com/jesuscastanares5185/llamada-estrategica-duracion-1-hora"
-         style="min-width:320px;height:420px;">
-    </div>
   </div>
 </header>
-
-<section>
-  <div class="container">
-    <h2>El problema real</h2>
-    <p>
-      La mayoría de restaurantes tienen buena comida, buen servicio y buena ubicación,
-      pero siguen teniendo mesas vacías porque su presencia online no convierte.
-    </p>
-    <p>
-      Una web mal planteada no informa:
-      <strong>hace que el cliente se vaya</strong>.
-    </p>
-  </div>
-</section>
-
-<section class="gray">
-  <div class="container">
-    <h2>Qué hacemos diferente</h2>
-    <div class="grid">
-      <div class="box">
-        <h3>Enfoque a reservas</h3>
-        <p>No diseñamos webs bonitas, diseñamos decisiones.</p>
-      </div>
-      <div class="box">
-        <h3>Sistema 24/7</h3>
-        <p>Tu negocio capta clientes incluso cuando estás cerrado.</p>
-      </div>
-      <div class="box">
-        <h3>Especialistas en hostelería</h3>
-        <p>No trabajamos con todo el mundo. Solo restaurantes.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section>
   <div class="container">
@@ -254,10 +232,10 @@ footer a:hover{
         <p class="price">0 €</p>
         <ul>
           <li>Errores claros que hacen perder reservas</li>
-          <li>Qué debería tener tu web para captar clientes</li>
+          <li>Qué debería tener tu web</li>
           <li>Demo web personalizada</li>
         </ul>
-        <strong>No te vendo nada. Te enseño dónde estás perdiendo dinero y luego decides.</strong>
+        <strong>No te vendo nada. Te enseño dónde estás perdiendo dinero.</strong>
       </div>
 
       <div class="box">
@@ -266,10 +244,9 @@ footer a:hover{
         <p class="price">317 € <span class="iva">IVA incluido</span></p>
         <ul>
           <li>Web completa (3–5 secciones)</li>
-          <li>Adaptada a móvil</li>
+          <li>Móvil</li>
           <li>Carta visible</li>
-          <li>Botón llamada o WhatsApp</li>
-          <li>Entrega rápida (48–72h)</li>
+          <li>WhatsApp o llamada</li>
         </ul>
         <strong>Una web decente que no espanta clientes.</strong>
       </div>
@@ -280,13 +257,11 @@ footer a:hover{
         <p class="price">697 € – 947 € <span class="iva">IVA incluido</span></p>
         <ul>
           <li>Todo el low-ticket</li>
-          <li>Optimización a conversión</li>
           <li>CTAs visibles</li>
-          <li>Formulario de reservas</li>
-          <li>WhatsApp flotante</li>
-          <li>Reseñas y SEO local básico</li>
+          <li>Formulario</li>
+          <li>SEO local</li>
         </ul>
-        <strong>Ahora tu web no solo está bien, ahora trabaja para ti.</strong>
+        <strong>Ahora tu web trabaja para ti.</strong>
       </div>
 
       <div class="box">
@@ -294,46 +269,35 @@ footer a:hover{
         <h3>Sistema completo 24/7</h3>
         <p class="price">Servicio personalizado</p>
         <ul>
-          <li>Todo lo anterior</li>
-          <li>IA para FAQs, textos y reservas</li>
-          <li>Cambios mensuales</li>
-          <li>Mantenimiento continuo</li>
-          <li>Optimización según resultados</li>
+          <li>IA + automatización</li>
+          <li>Mantenimiento</li>
+          <li>Optimización continua</li>
         </ul>
-        <strong>Tranquilidad, automatización y escalado real.</strong>
+        <strong>Escala tu negocio con tranquilidad.</strong>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- FAQ DISCRETO -->
 <section class="gray">
   <div class="container">
     <h2>Preguntas frecuentes</h2>
     <div class="faq">
 
       <div class="faq-item">
-        <input type="checkbox" id="faq1">
-        <label for="faq1">¿Hay permanencia?</label>
+        <input type="checkbox" id="f1">
+        <label for="f1">¿Hay permanencia?</label>
         <div class="faq-content">
-          <p>No. Los servicios recurrentes se pagan mes a mes y puedes cancelar cuando quieras antes de la siguiente renovación.</p>
+          <p>No. Puedes cancelar antes de la siguiente renovación mensual.</p>
         </div>
       </div>
 
       <div class="faq-item">
-        <input type="checkbox" id="faq2">
-        <label for="faq2">¿Cuándo se ven resultados?</label>
+        <input type="checkbox" id="f2">
+        <label for="f2">¿Garantizáis resultados?</label>
         <div class="faq-content">
-          <p>Depende del punto de partida del restaurante. El objetivo es mejorar reservas y conversión, no promesas irreales.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <input type="checkbox" id="faq3">
-        <label for="faq3">¿Puedo cancelar la suscripción fácilmente?</label>
-        <div class="faq-content">
-          <p>Sí. Desde el portal de cliente puedes gestionar tu suscripción, pagos y cancelaciones de forma autónoma.</p>
+          <p>No garantizamos ingresos ni reservas concretas, trabajamos optimizando el sistema.</p>
         </div>
       </div>
 
@@ -344,28 +308,54 @@ footer a:hover{
 <section id="agenda">
   <div class="container">
     <h2>Agenda una llamada estratégica</h2>
-    <p>Llamadas de 09:00 a 22:00 · Duración: 1 hora</p>
-
     <div class="calendly-inline-widget"
-         data-url="https://calendly.com/jesuscastanares5185/llamada-estrategica-duracion-1-hora"
-         style="min-width:320px;height:700px;">
-    </div>
+      data-url="https://calendly.com/jesuscastanares5185/llamada-estrategica-duracion-1-hora"
+      style="min-width:320px;height:700px;"></div>
   </div>
 </section>
 
 <footer>
-  © 2026 · Restaurant Marketing Systems  
-  <br><br>
+  © 2026 · Restaurant Marketing Systems<br><br>
   <a href="/aviso-legal.html">Aviso legal</a> |
   <a href="/politica-privacidad.html">Política de privacidad</a> |
   <a href="/politica-cookies.html">Política de cookies</a> |
   <a href="/terminos-del-servicio.html">Términos del servicio</a> |
-  <a href="https://billing.stripe.com/p/login/00w14of358iMes58KSa3u00" target="_blank" rel="noopener">
-    Gestión de suscripción
-  </a>
+  <a href="https://billing.stripe.com/p/login/00w14of358iMes58KSa3u00" target="_blank">Gestión de suscripción</a>
 </footer>
 
+<!-- COOKIE BANNER -->
+<div id="cookie-banner">
+  <p>
+    Utilizamos cookies propias y de terceros para mejorar la experiencia y analizar el uso del sitio.
+    <a href="/politica-cookies.html">Más información</a>.
+  </p>
+  <div class="cookie-actions">
+    <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Aceptar todas</button>
+    <button class="cookie-btn cookie-reject" onclick="rejectCookies()">Rechazar</button>
+    <button class="cookie-btn cookie-settings" onclick="openCookieSettings()">Configurar</button>
+  </div>
+</div>
+
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+function showCookieBanner(){
+  if(!localStorage.getItem("cookieConsent")){
+    document.getElementById("cookie-banner").style.display="block";
+  }
+}
+function acceptCookies(){
+  localStorage.setItem("cookieConsent","accepted");
+  document.getElementById("cookie-banner").style.display="none";
+}
+function rejectCookies(){
+  localStorage.setItem("cookieConsent","rejected");
+  document.getElementById("cookie-banner").style.display="none";
+}
+function openCookieSettings(){
+  window.location.href="/politica-cookies.html";
+}
+document.addEventListener("DOMContentLoaded", showCookieBanner);
+</script>
 
 </body>
 </html>
