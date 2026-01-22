@@ -2,78 +2,181 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Finalizar contratación</title>
+  <title>Finalizar contratación | Restaurant Marketing Systems</title>
   <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- FUENTE -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      padding: 40px;
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
     }
 
-    .box {
-      max-width: 600px;
-      margin: auto;
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0a66ff, #0f172a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 460px;
       background: #ffffff;
-      padding: 30px;
-      border-radius: 8px;
+      border-radius: 14px;
+      padding: 32px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      animation: fadeIn 0.6s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e0edff;
+      color: #0a66ff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
     }
 
     h1 {
-      margin-bottom: 10px;
+      font-size: 26px;
+      font-weight: 700;
+      margin: 0 0 8px;
+      color: #0f172a;
     }
 
-    p {
-      margin: 8px 0;
+    .price {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0a66ff;
+      margin: 16px 0 4px;
     }
 
-    label {
-      display: block;
-      margin-top: 20px;
+    .subtitle {
+      font-size: 14px;
+      color: #64748b;
+      margin-bottom: 20px;
+    }
+
+    .features {
+      background: #f8fafc;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 22px;
+      font-size: 14px;
+      color: #334155;
+    }
+
+    .features ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .features li {
+      margin-bottom: 6px;
+    }
+
+    .terms {
+      display: flex;
+      gap: 10px;
+      font-size: 14px;
+      color: #334155;
+      margin-bottom: 20px;
+    }
+
+    .terms a {
+      color: #0a66ff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .terms a:hover {
+      text-decoration: underline;
     }
 
     button {
-      margin-top: 25px;
       width: 100%;
-      padding: 15px;
+      padding: 16px;
       font-size: 16px;
-      background: #0a66ff;
-      color: #ffffff;
+      font-weight: 600;
+      border-radius: 10px;
       border: none;
-      border-radius: 5px;
+      background: linear-gradient(135deg, #0a66ff, #2563eb);
+      color: white;
       cursor: not-allowed;
       opacity: 0.6;
+      transition: all 0.3s ease;
     }
 
     button.enabled {
       cursor: pointer;
       opacity: 1;
+      box-shadow: 0 8px 20px rgba(37,99,235,0.35);
+    }
+
+    button.enabled:hover {
+      transform: translateY(-1px);
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 12px;
+      color: #94a3b8;
+      margin-top: 16px;
     }
   </style>
 </head>
 
 <body>
 
-<div class="box">
-  <h1 id="ticketName">Finalizar contratación</h1>
+<div class="card">
+  <span class="badge">Contratación segura</span>
 
-  <p><strong>Precio:</strong> <span id="ticketPrice"></span></p>
-  <p>Servicio recurrente. Sin reembolsos.</p>
-  <p>El servicio se inicia de forma inmediata tras el pago.</p>
+  <h1 id="ticketName">Servicio</h1>
 
-  <label>
+  <div class="price" id="ticketPrice"></div>
+  <div class="subtitle">
+    Servicio recurrente · Sin reembolsos · Inicio inmediato tras el pago
+  </div>
+
+  <div class="features">
+    <ul>
+      <li>Optimización digital para restaurantes</li>
+      <li>Sistemas de captación y automatización</li>
+      <li>Soporte y mejoras continuas</li>
+    </ul>
+  </div>
+
+  <label class="terms">
     <input type="checkbox" id="terms">
-    He leído y acepto expresamente los
-    <a href="/terminos-del-servicio.html" target="_blank">
-      Términos del Servicio
-    </a>.
+    <span>
+      He leído y acepto expresamente los
+      <a href="/terminos-del-servicio.html" target="_blank">
+        Términos del Servicio
+      </a>
+    </span>
   </label>
 
   <button id="payBtn" disabled>
     Continuar al pago
   </button>
+
+  <div class="footer-note">
+    Pago seguro procesado mediante Stripe
+  </div>
 </div>
 
 <script>
@@ -100,7 +203,7 @@
   };
 
   /* ===============================
-     DETECTAR TICKET DESDE LA URL
+     LÓGICA
      =============================== */
 
   const params = new URLSearchParams(window.location.search);
@@ -113,15 +216,11 @@
   document.getElementById("ticketName").innerText = tickets[ticketKey].name;
   document.getElementById("ticketPrice").innerText = tickets[ticketKey].price;
 
-  /* ===============================
-     CHECKBOX + BOTÓN
-     =============================== */
-
   const checkbox = document.getElementById("terms");
   const button = document.getElementById("payBtn");
 
-  checkbox.addEventListener("change", function () {
-    if (this.checked) {
+  checkbox.addEventListener("change", () => {
+    if (checkbox.checked) {
       button.disabled = false;
       button.classList.add("enabled");
     } else {
@@ -130,7 +229,7 @@
     }
   });
 
-  button.addEventListener("click", function () {
+  button.addEventListener("click", () => {
     window.location.href = tickets[ticketKey].stripe;
   });
 </script>
