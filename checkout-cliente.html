@@ -2,75 +2,60 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Finalizar contratación</title>
+  <title>Checkout cliente</title>
   <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    body { font-family: Arial; background:#f5f5f5; padding:40px; }
-    .box { max-width:600px; margin:auto; background:#fff; padding:30px; border-radius:8px; }
-    button { margin-top:20px; width:100%; padding:15px; font-size:16px; }
-    button:disabled { opacity:.5; cursor:not-allowed; }
-  </style>
 </head>
 
 <body>
-<div class="box">
-  <h1 id="planName">Contratación</h1>
 
-  <p><strong>Precio:</strong> <span id="planPrice"></span></p>
-  <p>Servicio recurrente. Sin reembolsos. Inicio inmediato tras el pago.</p>
+<h1>Prueba checkout cliente</h1>
 
-  <label>
-    <input type="checkbox" id="terms">
-    He leído y acepto expresamente los
-    <a href="/terminos-del-servicio.html" target="_blank">
-      Términos del Servicio
-    </a>.
-  </label>
+<p id="planInfo"></p>
 
-  <button id="payBtn" disabled>Continuar al pago</button>
-</div>
+<label>
+  <input type="checkbox" id="terms">
+  Acepto los <a href="/terminos-del-servicio.html" target="_blank">Términos</a>
+</label>
+
+<br><br>
+
+<button id="payBtn" disabled>Continuar</button>
 
 <script>
+  console.log("JS cargado");
+
   const plans = {
-    basic: {
-      name: "Low-ticket",
-      price: "317 € / mes",
-      stripe: "https://buy.stripe.com/00w14of358iMes58KSa3u00"
-    },
     pro: {
-      name: "Medium-ticket",
-      price: "697 € – 947 € / mes",
-      stripe: "PEGA_AQUI_STRIPE_PRO"
-    },
-    premium: {
-      name: "High-ticket",
-      price: "Servicio personalizado / mes",
-      stripe: "PEGA_AQUI_STRIPE_PREMIUM"
+      name: "Plan Pro",
+      stripe: "https://google.com"
     }
   };
 
   const params = new URLSearchParams(window.location.search);
   const planKey = params.get("plan");
 
-  if (!plans[planKey]) {
-    window.location.href = "/";
-  }
+  console.log("Plan:", planKey);
 
-  document.getElementById("planName").innerText = plans[planKey].name;
-  document.getElementById("planPrice").innerText = plans[planKey].price;
+  if (!plans[planKey]) {
+    alert("Plan no válido");
+  } else {
+    document.getElementById("planInfo").innerText = plans[planKey].name;
+  }
 
   const checkbox = document.getElementById("terms");
   const button = document.getElementById("payBtn");
 
-  checkbox.addEventListener("change", () => {
-    button.disabled = !checkbox.checked;
+  checkbox.addEventListener("change", function () {
+    console.log("Checkbox:", this.checked);
+    button.disabled = !this.checked;
   });
 
-  button.addEventListener("click", () => {
+  button.addEventListener("click", function () {
+    console.log("Botón clicado");
     window.location.href = plans[planKey].stripe;
   });
 </script>
+
 </body>
 </html>
