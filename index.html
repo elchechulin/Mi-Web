@@ -184,13 +184,31 @@ footer a:hover{text-decoration:underline;}
 }
 
 }
-  
-  /* Limitar tamaño imagen sistema captación en desktop */
+
+  /* Animación suave imagen sistema captación (desktop) */
 @media (min-width:1024px){
   .system-image{
-    max-width:900px;
+    opacity:0;
+    transform:translateY(20px);
+    animation:fadeUpSoft 0.9s ease-out forwards;
   }
 }
+
+@keyframes fadeUpSoft{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+  /* Limitar tamaño imagen sistema captación en desktop */
+@media(min-width:1024px){
+  .system-image{
+    max-width:900px;
+    margin:40px auto;
+  }
+}
+
 
 </style>
 </head>
@@ -448,6 +466,7 @@ document.addEventListener("DOMContentLoaded", showCookieBanner);
 
 </body>
 </html>
+
 
 
 
