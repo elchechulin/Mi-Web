@@ -155,10 +155,34 @@ footer a:hover{text-decoration:underline;}
 .cookie-accept{background:#e10600;color:#fff;}
 .cookie-reject{background:#333;color:#fff;}
 .cookie-settings{background:transparent;color:#bbb;text-decoration:underline;}
-
 @media(max-width:768px){
-  h1{font-size:2.2rem;}
-  header .calendly-inline-widget{display:none;}
+
+  h1{
+    font-size:2.2rem;
+  }
+
+  header .calendly-inline-widget{
+    display:none;
+  }
+
+  /* Ajuste imagen sistema captación */
+  .system-image{
+    max-width:100%;
+    margin:20px auto;
+    display:block;
+  }
+
+  .system-image img{
+    width:100%;
+    height:auto;
+    border-radius:14px;
+  }
+
+  section{
+    padding:60px 16px;
+  }
+}
+
 }
 </style>
 </head>
@@ -215,18 +239,13 @@ footer a:hover{text-decoration:underline;}
 <section class="gray">
   <div class="container">
     <h2>Qué hacemos diferente</h2>
-        <!-- Imagen sistema de captación -->
-    <img src="/sistema-captacion-restaurantes.jpg"
-         alt="Sistema de captación para restaurantes orientado a reservas y llamadas"
-         loading="lazy"
-         width="1100"
-         height="620"
-         style="
-           display:block;
-           margin:40px auto 60px auto;
-           border-radius:14px;
-           box-shadow:0 12px 35px rgba(0,0,0,.15);
-         ">
+   <div class="system-image">
+  <img 
+    src="/sistema-captacion-restaurantes.jpg"
+    alt="Sistema de captación para restaurantes orientado a reservas y llamadas"
+    loading="lazy">
+</div>
+
 
     <div class="grid">
       <div class="box">
@@ -421,6 +440,7 @@ document.addEventListener("DOMContentLoaded", showCookieBanner);
 
 </body>
 </html>
+
 
 
 
